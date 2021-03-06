@@ -13,8 +13,8 @@ alias PhotoBlog.Repo
 alias PhotoBlog.Users.User
 alias PhotoBlog.Posts.Post
 
-alice = Repo.insert!(%User{name: "alice"})
-bob = Repo.insert!(%User{name: "bob"})
+alice = Repo.insert!(%User{name: "alice", email: "alice@gmail.com"})
+bob = Repo.insert!(%User{name: "bob", email: "bob@gmail.com"})
 
-Repo.insert!(%Post{user_id: alice.id, body: "Alice says Hi!"})
-Repo.insert!(%Post{user_id: bob.id, body: "Bob says garblarg!"})
+Repo.insert!(%Post{user_id: alice.id, title: "Alice's Birthday", body: "", date:"3-12-21"})
+Repo.insert!(%Post{user_id: bob.id, title: "Bob's Saint Paddy's Shindig", body: "", date: "3-17-21"})

@@ -4,6 +4,7 @@ defmodule PhotoBlog.Users.User do
 
   schema "users" do
     field :name, :string
+    field :email, :string
     field :password_hash, :string
     has_many :posts, PhotoBlog.Posts.Post
 
@@ -13,7 +14,7 @@ defmodule PhotoBlog.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :password_hash])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :email, :password_hash])
+    |> validate_required([:name, :email])
   end
 end

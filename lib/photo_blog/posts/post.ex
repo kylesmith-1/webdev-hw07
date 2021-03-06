@@ -3,6 +3,8 @@ defmodule PhotoBlog.Posts.Post do
   import Ecto.Changeset
 
   schema "posts" do
+    field :date, :string
+    field :title, :string
     field :body, :string
     belongs_to :user, PhotoBlog.Users.User
 
@@ -12,7 +14,7 @@ defmodule PhotoBlog.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body, :user_id])
-    |> validate_required([:body, :user_id])
+    |> cast(attrs, [:date, :title, :body, :user_id])
+    |> validate_required([:date, :title, :user_id])
   end
 end
