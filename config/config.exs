@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :photo_blog,
-  ecto_repos: [PhotoBlog.Repo]
+config :events,
+  ecto_repos: [Events.Repo]
 
 # Configures the endpoint
-config :photo_blog, PhotoBlogWeb.Endpoint,
+config :events, EventsWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "9LwWlSi/04mSYC8nnbAyk4aE6aFgUBp8buOQW0D6Jz/RSZ8RgAUgwPwO2zyuX3Zx",
-  render_errors: [view: PhotoBlogWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PhotoBlog.PubSub,
+  render_errors: [view: EventsWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Events.PubSub,
   live_view: [signing_salt: "0khxbcEC"]
 
 # Configures Elixir's Logger

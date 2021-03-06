@@ -1,4 +1,4 @@
-defmodule PhotoBlogWeb.ChannelCase do
+defmodule EventsWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule PhotoBlogWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PhotoBlogWeb.ChannelCase, async: true`, although
+  by setting `use EventsWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule PhotoBlogWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import PhotoBlogWeb.ChannelCase
+      import EventsWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint PhotoBlogWeb.Endpoint
+      @endpoint EventsWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhotoBlog.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Events.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhotoBlog.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Events.Repo, {:shared, self()})
     end
 
     :ok
