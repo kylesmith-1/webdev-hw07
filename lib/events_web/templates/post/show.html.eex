@@ -1,0 +1,15 @@
+<p>
+  <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
+  <span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
+</p>
+
+<h1><%= @post.title %></h1>
+
+<div>
+  <%= @post.date %>
+</div>
+
+<div>
+  Description:
+  <%= @post.body %>
+</div>

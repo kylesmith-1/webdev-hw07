@@ -14,3 +14,10 @@ import "../css/app.scss";
 //     import socket from "./socket"
 //
 import "phoenix_html";
+
+import flatpickr from 'flatpickr';
+
+flatpickr("#date_selector", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+  });
