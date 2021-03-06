@@ -16,6 +16,11 @@ https://github.com/kylesmith-1/webdev-hw07
 
 http://events.devcalibur.com
 
+if that is for some reason down, please check
+http://hw04.devcalibur.com as I may have hijacked it
+to make sure this is visible, been having some issues
+with namecheap
+
 4. Is your app functionality complete? If not, what's missing?
 
 Yes, I believe it meets all the requested requirements for this
