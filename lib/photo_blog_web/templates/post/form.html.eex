@@ -13,16 +13,17 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :body %>
+    <%= label f, "Description" %>
     <%= textarea f, :body, class: "form-control" %>
     <%= error_tag f, :body %>
   </div>
 
   <div class="form-group">
     <%= label f, :date %>
-    <%= textarea f, :date, class: "form-control" %>
+    <%= text_input f, :date, class: "form-control", id: "date_selector" %>
     <%= error_tag f, :date %>
   </div>
+
 
   <div>
     <%= submit "Save", class: "btn btn-primary" %>

@@ -19,10 +19,10 @@ defmodule PhotoBlogWeb.PostControllerTest do
     end
   end
 
-  describe "new post" do
+  describe "new event" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.post_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Post"
+      assert html_response(conn, 200) =~ "New Event"
     end
   end
 
@@ -39,16 +39,16 @@ defmodule PhotoBlogWeb.PostControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.post_path(conn, :create), post: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Post"
+      assert html_response(conn, 200) =~ "New Event"
     end
   end
 
-  describe "edit post" do
+  describe "edit event" do
     setup [:create_post]
 
     test "renders form for editing chosen post", %{conn: conn, post: post} do
       conn = get(conn, Routes.post_path(conn, :edit, post))
-      assert html_response(conn, 200) =~ "Edit Post"
+      assert html_response(conn, 200) =~ "Edit Event"
     end
   end
 
@@ -65,7 +65,7 @@ defmodule PhotoBlogWeb.PostControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn, post: post} do
       conn = put(conn, Routes.post_path(conn, :update, post), post: @invalid_attrs)
-      assert html_response(conn, 200) =~ "Edit Post"
+      assert html_response(conn, 200) =~ "Edit Event"
     end
   end
 

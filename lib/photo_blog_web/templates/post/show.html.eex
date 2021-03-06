@@ -3,8 +3,13 @@
   <span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
 </p>
 
-<h1>Show Post #<%= @post.id %></h1>
+<h1><%= @post.title %></h1>
 
 <div>
+  <%= @post.date %>
+</div>
+
+<div>
+  Description:
   <%= @post.body %>
 </div>
